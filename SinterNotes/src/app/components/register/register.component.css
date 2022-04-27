@@ -1,0 +1,20 @@
+form{
+  width: 400px;
+  text-align: center;
+}
+
+input{
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-alert{
+  color:red;
+  text-align: left;
+}
+
+span{
+  font-size: small;
+}
