@@ -51,7 +51,7 @@
 
       <div class="row">
         <div class="col mb-3">
-          <input type="rpassword" class= "form-control" formControlName="rpassword" placeholder="Repeat Password"/>
+          <input type="password" class= "form-control" formControlName="rpassword" id="rpassword" placeholder="Repeat Password"/>
 
           <span class="custom-alert" style="float: left;" *ngIf ="registerForm.controls['rpassword'].hasError('required') && registerForm.controls['rpassword'].touched">
             <svg aria-hidden="true" class="warning" fill="currentColor" focusable="false" width="16px" height="16px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
@@ -60,7 +60,7 @@
 
           <span class="custom-alert" style="float: left;" *ngIf ="registerForm.controls['rpassword'].hasError('confirmedValidator')">
             <svg aria-hidden="true" class="warning" fill="currentColor" focusable="false" width="16px" height="16px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
-             Password not matching
+             Password didn't match
           </span>
 
         </div>

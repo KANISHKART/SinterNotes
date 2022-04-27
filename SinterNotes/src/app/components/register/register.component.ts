@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
       rpassword: new FormControl('',Validators.required)
     },
     {
-      Validators: this.confirmedValidator('password','rpassword')
+      validator : this.ConfirmedValidator('password','rpassword')
     }
     );
    }
@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit {
     this.registerForm.reset();
   }
 
-  confirmedValidator(controlName: string, matchingControlName :string){
+  ConfirmedValidator(controlName: string, matchingControlName :string){
       return (formGroup:FormGroup)=>{
         const control= formGroup.controls[controlName];
         const matchingControl= formGroup.controls[matchingControlName];
