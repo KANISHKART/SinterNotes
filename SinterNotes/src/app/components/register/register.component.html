@@ -1,1 +1,92 @@
-<p>register works!</p>
+<div class="border p-3">
+  <div class="tab-pane fade show active" id="pills-login">
+    <form [formGroup]= "registerForm" (ngSubmit)="register()">
+
+      <div class="row">
+        <div class="col text-center p-2 mb-3">
+          <span class="fs-3">Register</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col mb-3">
+          <input type="text" class= "form-control" formControlName="username" id="username" placeholder="Username"/>
+
+          <span class="custom-alert" style="float: left;" *ngIf = "registerForm.controls['username'].hasError('required') && registerForm.controls['username'].touched">
+            <svg aria-hidden="true" class="warning" fill="currentColor" focusable="false" width="16px" height="16px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
+             Username required
+          </span>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col mb-3">
+          <input type="text" class= "form-control" formControlName="email" id="email" placeholder="Email"/>
+
+          <span class="custom-alert" style="float: left;" *ngIf = "registerForm.controls['email'].hasError('required') && registerForm.controls['email'].touched">
+            <svg aria-hidden="true" class="warning" fill="currentColor" focusable="false" width="16px" height="16px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
+             Email required
+          </span>
+
+          <span class="custom-alert" style="float: left;" *ngIf = "registerForm.controls['email'].hasError('email') && registerForm.controls['email'].touched">
+            <svg aria-hidden="true" class="warning" fill="currentColor" focusable="false" width="16px" height="16px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
+              Incorrect Email
+          </span>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col mb-3">
+          <input type="password" class= "form-control" formControlName="password" placeholder="Password"/>
+
+          <span class="custom-alert" style="float: left;" *ngIf ="registerForm.controls['password'].hasError('required') && registerForm.controls['password'].touched">
+            <svg aria-hidden="true" class="warning" fill="currentColor" focusable="false" width="16px" height="16px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
+             Password required
+          </span>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col mb-3">
+          <input type="rpassword" class= "form-control" formControlName="rpassword" placeholder="Repeat Password"/>
+
+          <span class="custom-alert" style="float: left;" *ngIf ="registerForm.controls['rpassword'].hasError('required') && registerForm.controls['rpassword'].touched">
+            <svg aria-hidden="true" class="warning" fill="currentColor" focusable="false" width="16px" height="16px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
+             Password required
+          </span>
+
+          <span class="custom-alert" style="float: left;" *ngIf ="registerForm.controls['rpassword'].hasError('confirmedValidator')">
+            <svg aria-hidden="true" class="warning" fill="currentColor" focusable="false" width="16px" height="16px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
+             Password not matching
+          </span>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col mb-3">
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+            <button type="submmit" [disabled]="!registerForm.valid" class="btn btn-outline-success me-md-2">Sign Up</button>
+            <button type="button" (click)="onReset()" class="btn btn-outline-warning">Reset</button>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col mb-3">
+          <div class="col-sm-12 text-left">
+           <p>Already a member?
+            <a routerLink="/login">Sign In</a>
+           </p>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
